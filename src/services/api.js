@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 const instance = axios.create({
@@ -29,6 +30,15 @@ export const loginUser = async (formData) => {
 export const submitReview = async (formData) => {
   try {
     const response = await instance.post('/api/reviews', formData);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
+};
+
+export const getReviews = async () => {
+  try {
+    const response = await instance.get('/api/reviews');
     return response.data;
   } catch (error) {
     handleError(error);
