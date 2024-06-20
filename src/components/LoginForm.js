@@ -1,4 +1,3 @@
-// components/LoginForm.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/api';
@@ -27,7 +26,7 @@ const LoginForm = () => {
     try {
       const data = await loginUser(formData);
       setMessage('Login successful!');
-      navigate('/reviews'); // Redirect to the review page after successful login
+      navigate('/reviews'); 
     } catch (error) {
       setMessage(error.message || 'Login failed. Please try again.');
     }
